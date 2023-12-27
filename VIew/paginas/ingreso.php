@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>Stacked form</h2>
+    <h2>Ingreso</h2>
     <form action="">
         <div class="form-group">
             <label for="email">Email:</label>
