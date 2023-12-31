@@ -35,9 +35,21 @@
         </div>
         <?php 
 
-        $objUsuario = new FormularioController();
-        $objUsuario->strRegistro();
+        //Metodo no estatico
+        // $objUsuario = new FormularioController();
+        // $objUsuario->strRegistro();
 
+        //Metodo estatico
+        $objUsuario = FormularioController::strRegistro();
+        if ($objUsuario == 'ok'){
+            echo '<script>
+             if(window.history.replaceState){
+                window.history.replaceState(null, null, window.location.href);
+             }
+            
+            </script>';
+            echo '<div class ="alert alert-success">El usuario a sido registrado</div>';
+        }
         ?>
         <button type="submit" name="enviar" class="btn btn-primary">Registrate</button>
     </form>

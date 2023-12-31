@@ -2,11 +2,20 @@
 
 class FormularioController {
 
-    public function strRegistro()
+    static public function strRegistro()
     {
         if (isset($_POST['enviar'])) {
-            $nombre = $_POST['nombre'];
-            echo $nombre;
+            $tabla = "registroUsuarios";
+            $datos = array(
+                "nombre" => $_POST['nombre'],
+                "correo" => $_POST['correo'],
+                "contra" => $_POST['pwd']
+            );
+
+            $respuesta = FormulariosModel::mdlRegistro($tabla, $datos);
+
+            return $respuesta;
+
         }
 
     }
