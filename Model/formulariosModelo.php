@@ -25,6 +25,14 @@ class FormulariosModel {
         $objConexion = null;
 
     }
+    static public function mdlObtenerRegistros($tabla)
+    {
+        $objConexion = Conexion::conectar()->prepare("SELECT *, date_format(fecha, '%d/%m/%Y') as fecha 
+                                                      FROM $tabla Order by idUsuario desc");
+
+        $objConexion->execute();
+        return $objConexion->fetchAll();
+    }
 }
 
 ?>

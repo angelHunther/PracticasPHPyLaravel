@@ -19,6 +19,13 @@ class FormularioController {
         }
 
     }
+
+    static public function ctrSeleccionarRegistros(){
+
+        $tabla = 'registroUsuarios';
+        $objUsuarios = FormulariosModel::mdlObtenerRegistros($tabla);
+        return $objUsuarios;
+    }
 }
 
 ?>
